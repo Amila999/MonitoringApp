@@ -27,7 +27,12 @@ namespace Monitoring__App
 
         private void FillDataGrid() 
         {
+            gridMeasurementData.AutoGenerateColumns = true;
             gridMeasurementData.DataSource = measurementList;
+            gridMeasurementData.Columns[0].HeaderText = "Measurement ID";
+            gridMeasurementData.Columns[1].HeaderText = "Measurement Timestamp";
+            gridMeasurementData.Columns[2].HeaderText = "Temperature [Celsius]";
+            gridMeasurementData.Columns[3].HeaderText = "Temperature [Fahrenheit]";
         }
 
         private void FillChart()

@@ -13,7 +13,7 @@ namespace Monitoring__App
 
         public List<MeasurementData> GetMeasurementData()
         {
-            string connectionString = @"DATA SOURCE=AMILARUWAN;DATABASE=SENSOR_SYSTEM;Integrated Security = True";
+            string connectionString = @"DATA SOURCE=DESKTOP-D4R0VU6\WINCC;DATABASE=SENSOR_SYSTEM;Integrated Security = True";
             List<MeasurementData> measurementDataList = new List<MeasurementData>();
             SqlConnection con = new SqlConnection(connectionString);
             string selectSQL = "select MeasurementId, MeasurementTimeStamp, MeasurementValue, FahrenheitValue from GetMeasurementData where SensorName = 'TC01-1'";
@@ -49,7 +49,7 @@ namespace Monitoring__App
         public StatisticsData GetStatisticsData()
         {
             StatisticsData statisticsData = new StatisticsData();
-            string connectionString = @"DATA SOURCE=AMILARUWAN;DATABASE=SENSOR_SYSTEM;Integrated Security = True";
+            string connectionString = @"DATA SOURCE=DESKTOP-D4R0VU6\WINCC;DATABASE=SENSOR_SYSTEM;Integrated Security = True";
             
             SqlConnection con = new SqlConnection(connectionString);
             string selectSQL = "select AverageData, MinData,MaxData from GetStatisticsData where SensorName = 'TC01-1'";
